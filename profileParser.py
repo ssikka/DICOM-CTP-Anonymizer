@@ -889,9 +889,10 @@ class ctpparser():
 
 			
 
-			if not val == None:
+			if not val == None and key in self._ds.keys():
  				if '@' in val and (not '-@' in val):
 
+					self._setCurrentTag(key)
 					func , args = self._getFunctionAndArgs(val)
 
 					if not func == None and not func == 'param':
