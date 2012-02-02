@@ -345,12 +345,12 @@ class ctpparser():
 				baseTenHash = str(int(hashs,16))
 
 				if toReturnVal == 0:		
-					(self._ds[Tag]).value = baseTenHash[ 0 : int(args[0]) - 1 ]
+					(self._ds[Tag]).value = baseTenHash[ 0 : int(args[0])  ]
 				else:
-					return baseTenHash[ 0 : int(args[0]) - 1 ]
+					return baseTenHash[ 0 : int(args[0])  ]
 
 			elif(len(args) > 1):
-				words = re.sub(r'"','',words[ 0 : int(args[1]) - 1 ])
+				words = re.sub(r'"','',words[ 0 : int(args[1])  ])
 
 				words = re.sub(r'\'','',words)
 
@@ -362,9 +362,9 @@ class ctpparser():
 				baseTenHash = str(int(hashs,16))
 		
 				if toReturnVal == 0:		
-					(self._ds[Tag]).value =   baseTenHash[ 0 : int(args[0]) - 1 ]
+					(self._ds[Tag]).value =   baseTenHash[ 0 : int(args[0])  ]
 				else:
-					return baseTenHash[ 0 : int(args[0]) - 1 ]
+					return baseTenHash[ 0 : int(args[0])  ]
 
 		else:
 			raise AttributeError, Tag
