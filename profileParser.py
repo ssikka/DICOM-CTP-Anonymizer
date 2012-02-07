@@ -607,15 +607,22 @@ class ctpparser():
 
 		return
 
-	def time(self,toReturnVal,separator):
+	def time(self,toReturnVal,*args):
 	
 		import datetime
 
 		timenow = datetime.datetime.now()
 
-		strtime = "\%H%s\%M%s\%S" %(separator,separator)
+		if len(args) == 0:
+
+			strtime = "\%H:\%M:\%S" 
+		else:
+			separator = args[0]
+			strtime = "\%H%s\%M%s\%S" %(separator,separator)
 
 		times = timenow.strftime(strtime)
+
+		self._ds[self._currentTag].value = times
 
 		return times
 
