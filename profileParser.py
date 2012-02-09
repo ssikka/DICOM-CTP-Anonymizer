@@ -613,12 +613,12 @@ class ctpparser():
 
 		timenow = datetime.datetime.now()
 
-		if len(args) == 0:
+		if len(args) == 0 or args[0] == ":":
 
-			strtime = "\%H:\%M:\%S" 
+			strtime = "%H:%M:%S" 
 		else:
 			separator = args[0]
-			strtime = "\%H%s\%M%s\%S" %(separator,separator)
+			strtime = "%H%s%M%s%S" %(separator,separator)
 
 		times = timenow.strftime(strtime)
 
